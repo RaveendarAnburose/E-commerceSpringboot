@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace= "~{base::Layout(~{::section})}">
+	<head>
+		<title> </title>
+	</head>
+<body>
+	
+	<section>
+   	
+	<!-------------Img start--------------->
+				<div id="carouselExample" class="carousel slide">
+				  <div class="carousel-inner">
+				    <div class="carousel-item active">
+				      <img src="img/profile_img/img-6.webp" class="d-block w-100" alt="..." height="500px">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="img/profile_img/pimg-2.jpeg" class="d-block w-100" alt="..." height="500px">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="img/profile_img/main-5.avif" class="d-block w-100" alt="..." height="500px">
+				    </div>
+					<div class="carousel-item">
+						<img src="img/profile_img/pimg-1.jpeg" class="d-block w-100" alt="..." height="500px">
+				   </div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+			<!---------------Img ending----------------->
+	
+		<!---------------Category start-------------->
+					<div class="container">
+						<div class="row">
+							<p class="text-center fs-4">Category</p>
+					<!--C1-->		
+							<div class="col-md-2" th:each="c:${category}">
+								<div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+									<div class="card-body text-center">
+										<img th:src="@{'img/Category/'+${c.imgName}}"  width="65%" height="140px">
+										<a th:href="@{'/products?category='+${c.name}}" class="text-decoration-none">[[${c.name}]]</a>
+									</div>
+								</div>
+							</div>
+					<!--C2-->		
+							<!--<div class="col-md-2">
+								<div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+									<div class="card-body text-center">
+										<img src="img/Category/Beauty.jpg"  width="65%" height="140px">
+										<p>Cosmetics</p>
+									</div>
+								</div>
+							</div>-->
+					<!--C3-->		
+							<!--<div class="col-md-2">
+								<div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+									<div class="card-body text-center">
+										<img src="img/Category/clothes.jpg"  width="65%" height="140px">
+										<p>Fashion</p>
+									</div>
+								</div>
+							</div>-->
+				     <!--C4-->	
+					<!-- <div class="col-md-2">
+					 	<div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+					 		<div class="card-body text-center">
+					 			<img src="img/Category/homeElc.jpg"  width="65%" height="140px">
+					 			<p>Electronics</p>
+					 		</div>
+					 	</div>
+					 </div>-->
+				<!--C5-->
+				<!--<div class="col-md-2">
+				    <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							 <img src="img/Category/mobile.jpg"  width="65%" height="140px">
+							 <p>Mobile</p>
+						</div>
+					</div>
+				</div>-->
+				<!--C6--->			 
+				     <!--<div class="col-md-2">
+						<div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+							 <div class="card-body text-center">
+							 	<img src="img/Category/Grocery.jpg"  width="65%" height="140px">
+							 	<p>Grocery</p>
+							 </div>
+						</div>
+					</div>	-->
+						</div>
+					</div>
+				<!---------------Category end----------------->
+		
+		<!---------------start Lastest product module----------------->
+				
+				<div class="container-fluid bg-light p-3">
+					<div class="row">
+						<p class="text-center fs-4">Latest Product </p>
+						
+						<div class="col-md-3" th:each="p:${products}">
+							<div class="card  shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+								<div class="card-body text-center">
+									<img th:src="@{'img/product/'+${p.image}}" width="65%" height="140px"><br>
+									<p class="text-center"><a th:href="@{'/product/'+${p.id}}"class="text-decoration-none">[[${p.title}]]</a></p>
+								</div>
+							</div>
+						</div>
+						<!---->
+						<!--<div class="col-md-3">
+								<div class="card  shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
+									<div class="card-body text-center">
+										<img src="img/product/laptop-.jpg" width="65%" height="140px">
+										<p class="text-center">HP Laptop</p>
+									</div>
+								</div>
+						</div>
+						-
+						<div class="col-md-3">
+							<div class="card  shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+								<div class="card-body text-center">
+								   <img src="img/product/laptop-.jpg" width="65%" height="140px">
+									<p class="text-center">HP Laptop</p>
+								</div>
+							</div>
+						</div>
+					---
+					<div class="col-md-3">
+						<div class="card  shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center">
+								<img src="img/product/laptop-.jpg" width="65%" height="140px">
+								<p class="text-center">HP Laptop</p>
+							</div>
+						</div>
+					</div>-->
+				<!-------->
+			
+					</div>
+				</div>
+				<!---------------Lastest product module end----------------->
+		
+	</section>
+	
+</body>
+</html>
